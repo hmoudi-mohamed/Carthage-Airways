@@ -1,5 +1,0 @@
-admin;admin123;admin;
-PN001;pilote123;utilisateur;PN001
-PN002;copilote123;utilisateur;PN002
-PN003;hotesse123;utilisateur;PN003
-PN004;steward123;utilisateur;PN004
