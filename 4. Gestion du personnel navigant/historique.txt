@@ -1,0 +1,2 @@
+05/11/2026 09:00:12;admin;PN001;Ajout;Ajout dans personnel.txt
+06/11/2026 10:30:45;admin;PN002;Modification;Fiche modifiée
