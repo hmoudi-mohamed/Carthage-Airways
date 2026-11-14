@@ -1,11 +1,11 @@
 # Gestion du personnel navigant - Carthage Airways
 
-Projet de programmation C (séance 4) - interface **Glade 2 / GTK 2** (libglade2), Ubuntu 18.04.
-Interface **simple, sans aucune couleur** (thème GTK par défaut), même présentation que les gestions des avions et des réservations.
+Projet de programmation C  - interface **Glade 2 / GTK 2** (libglade2), Ubuntu 18.04.
+
 
 ## Les deux espaces
 
-Une seule fenêtre de connexion, puis l'application ouvre l'espace correspondant au compte (colonne *rôle* de `users.txt`).
+Une seule fenêtre de connexion, puis l'application ouvre l'espace correspondant au compte .
 
 | Espace | Compte de test | Ce qu'on y fait |
 |---|---|---|
@@ -43,16 +43,16 @@ Toutes les données sont dans des fichiers texte : on voit le résultat directem
 ## Compiler et lancer
 
 ```bash
-sudo apt install build-essential libgtk2.0-dev libglade2-dev    # une seule fois
+sudo apt install build-essential libgtk2.0-dev libglade2-dev    
 cd gestion_personnel
-make                     # compile l'application
-./gestion_personnel      # à lancer depuis ce dossier (il lit le .glade et les .txt)
-make test                # teste le module SANS interface ; code retour 0 = tout est correct
-make clean               # supprime les fichiers compilés
+make                    
+./gestion_personnel     
+make test                
+make clean               
 ```
 
 Pour modifier l'interface avec Glade 2 : `glade-2 gestion_personnel.glade`
-(les noms de gestionnaires `on_<widget>_<signal>` doivent correspondre aux fonctions du `.c`).
+
 
 ## Les fichiers
 
@@ -116,6 +116,4 @@ Matricule de 3 caractères minimum (lettres, chiffres, tiret), nom et prénom en
 
 Après avoir ajouté un membre dans la gestion, ajouter une ligne dans `users.txt` : `matricule;motdepasse;personnel` (par exemple `PN007;monmotdepasse;personnel`).
 
-## Travail en équipe (Git)
-
-Créer une branche `gestion-personnel-navigant`, copier ce dossier, puis une pull request vers `main`. Pour regrouper plusieurs gestions dans un seul menu, ajouter un bouton par gestion dans la fenêtre `window_principal` de Glade et son gestionnaire `on_btn_..._clicked` dans `principal.c`.
+ thanks for being here :)
