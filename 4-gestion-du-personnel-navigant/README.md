@@ -29,29 +29,6 @@ Le matricule saisi comme identifiant doit exister dans `personnel.txt`.
 
 Toutes les données sont dans des fichiers texte : on voit le résultat directement dans le fichier après chaque opération.
 
-## Respect des instructions du devoir
-
-| Instruction | Où |
-|---|---|
-| Implémenter les fonctions demandées | `personnel.c` / `personnel.h` |
-| Travailler avec des fichiers texte | `personnel.txt` (une ligne par membre, champs séparés par `;`) |
-| Nommer le module d'après la structure | structure `Personnel` -> `personnel.h` + `personnel.c` |
-| Jamais de `printf` / `scanf` dans les fonctions | aucune dans `personnel.c` ; l'affichage se fait dans l'interface (GtkTreeView) |
-| Vérifier l'exécution directement dans le fichier texte | `make test` écrit `test_personnel.txt`, `tri_personnel.txt` et `rapport_personnel.txt` |
-| Glade 2 uniquement | `gestion_personnel.glade` (4 fenêtres : login, menu principal, gestion admin, espace personnel) |
-
-## Compiler et lancer
-
-```bash
-sudo apt install build-essential libgtk2.0-dev libglade2-dev    
-cd gestion_personnel
-make                    
-./gestion_personnel     
-make test                
-make clean               
-```
-
-Pour modifier l'interface avec Glade 2 : `glade-2 gestion_personnel.glade`
 
 
 ## Les fichiers
