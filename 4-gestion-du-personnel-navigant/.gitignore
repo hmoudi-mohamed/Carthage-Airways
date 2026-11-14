@@ -1,0 +1,6 @@
+gestion_personnel
+test_personnel
+*.o
+test_personnel.txt
+tri_personnel.txt
+rapport_personnel.txt

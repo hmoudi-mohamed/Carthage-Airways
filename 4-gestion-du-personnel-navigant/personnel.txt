@@ -1,0 +1,6 @@
+PN001;Ben Salah;Karim;09123456;Pilote;Tunis-Carthage;15/03/2010;8450;LIC-P-1001;20/03/2027;98123456;karim.bensalah@carthage.tn;Disponible
+PN002;Gharbi;Mohamed;08234567;Copilote;Tunis-Carthage;02/09/2016;3120;LIC-P-1002;15/12/2026;97234567;mohamed.gharbi@carthage.tn;Disponible
+PN003;Trabelsi;Sarra;07345678;Hôtesse;Djerba-Zarzis;11/05/2018;2100;LIC-C-2001;30/06/2027;55345678;sarra.trabelsi@carthage.tn;En vol
+PN004;Haddad;Yassine;11456789;Steward;Tunis-Carthage;23/01/2019;1650;LIC-C-2002;10/09/2027;22456789;yassine.haddad@carthage.tn;Disponible
+PN005;Mejri;Nadia;10567890;Pilote;Monastir;07/07/2008;12300;LIC-P-1003;05/02/2027;50567890;nadia.mejri@carthage.tn;En congé
+PN006;Jlassi;Amine;12678901;Hôtesse;Tunis-Carthage;19/10/2020;980;LIC-C-2003;18/11/2026;96678901;amine.jlassi@carthage.tn;Disponible

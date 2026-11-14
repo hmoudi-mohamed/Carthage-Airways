@@ -1,0 +1,5 @@
+TS-IMA;A320-200;Airbus;Moyen-courrier;Tunis-Carthage;12/03/2015;180;120;Opérationnel
+TS-IMB;B737-800;Boeing;Moyen-courrier;Tunis-Carthage;05/07/2012;162;96;Opérationnel
+TS-IMC;A330-300;Airbus;Long-courrier;Tunis-Carthage;21/09/2018;290;0;En maintenance
+TS-LAT;ATR 72-600;ATR;Court-courrier;Djerba-Zarzis;30/01/2019;70;40;Opérationnel
+TS-EMB;E190;Embraer;Court-courrier;Monastir;14/06/2010;100;0;Hors service
