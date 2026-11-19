@@ -1,0 +1,2072 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
+<!DOCTYPE glade-interface SYSTEM "http://glade.gnome.org/glade-2.0.dtd">
+
+<glade-interface>
+  <widget class="GtkWindow" id="MTBKwindowAeroports">
+    <property name="visible">True</property>
+    <property name="title">Carthage Airways - Gestion des aéroports (Administrateur)</property>
+    <property name="type">GTK_WINDOW_TOPLEVEL</property>
+    <property name="window_position">GTK_WIN_POS_CENTER</property>
+    <property name="default_width">1000</property>
+    <property name="default_height">740</property>
+    <property name="resizable">True</property>
+    <property name="border_width">6</property>
+    <signal name="destroy" handler="on_MTBKwindowAeroports_destroy" />
+    <child>
+      <widget class="GtkVBox" id="MTBKvboxPrincipale">
+        <property name="visible">True</property>
+        <property name="homogeneous">False</property>
+        <property name="spacing">6</property>
+        <property name="border_width">0</property>
+        <child>
+          <widget class="GtkHBox" id="MTBKhboxEntete">
+            <property name="visible">True</property>
+            <property name="homogeneous">False</property>
+            <property name="spacing">6</property>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelTitreApp">
+                <property name="visible">True</property>
+                <property name="label">&lt;span size="large" weight="bold"&gt;CARTHAGE AIRWAYS&lt;/span&gt;</property>
+                <property name="xalign">0.0</property>
+                <property name="yalign">0.5</property>
+                <property name="use_markup">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelEspace">
+                <property name="visible">True</property>
+                <property name="label">ESPACE ADMINISTRATEUR</property>
+                <property name="xalign">0.5</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelConnecte">
+                <property name="visible">True</property>
+                <property name="label">Connecté : admin</property>
+                <property name="xalign">1.0</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">8</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="MTBKboutonDeconnecter">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="label">se déconnecter</property>
+                <property name="response_id">0</property>
+                <signal name="clicked" handler="on_MTBKboutonDeconnecter_clicked" />
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHSeparator" id="MTBKhseparatorEntete">
+            <property name="visible">True</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkNotebook" id="MTBKnotebookAeroports">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="show_tabs">True</property>
+            <property name="show_border">True</property>
+            <property name="tab_pos">GTK_POS_TOP</property>
+            <property name="scrollable">False</property>
+            <child>
+              <widget class="GtkVBox" id="MTBKvboxAeroport">
+                <property name="visible">True</property>
+                <property name="homogeneous">False</property>
+                <property name="spacing">6</property>
+                <property name="border_width">8</property>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelTitre">
+                    <property name="visible">True</property>
+                    <property name="label">&lt;span size="x-large" weight="bold"&gt;Gestion des aéroports&lt;/span&gt;</property>
+                    <property name="xalign">0.5</property>
+                    <property name="yalign">0.5</property>
+                    <property name="use_markup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="MTBKframeInfos">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">2</property>
+                    <property name="border_width">0</property>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKframeInfosTitre">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;Informations de l'aéroport&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkTable" id="MTBKtableInfos">
+                        <property name="visible">True</property>
+                        <property name="n_rows">5</property>
+                        <property name="n_columns">4</property>
+                        <property name="homogeneous">False</property>
+                        <property name="row_spacing">8</property>
+                        <property name="column_spacing">12</property>
+                        <property name="border_width">8</property>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelCodeIata">
+                            <property name="visible">True</property>
+                            <property name="label">Code IATA*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEntry" id="MTBKtextCodeIata">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">True</property>
+                            <property name="max_length">3</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelEtat">
+                            <property name="visible">True</property>
+                            <property name="label">État*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="right_attach">3</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkHBox" id="MTBKhboxEtat">
+                            <property name="visible">True</property>
+                            <property name="homogeneous">False</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <widget class="GtkRadioButton" id="MTBKradioOuvert">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Ouvert</property>
+                                <property name="active">True</property>
+                                <property name="draw_indicator">True</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkRadioButton" id="MTBKradioFerme">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Fermé</property>
+                                <property name="active">False</property>
+                                <property name="draw_indicator">True</property>
+                                <property name="group">MTBKradioOuvert</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="right_attach">4</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelNom">
+                            <property name="visible">True</property>
+                            <property name="label">Nom*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEntry" id="MTBKtextNom">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">True</property>
+                            <property name="max_length">50</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelType">
+                            <property name="visible">True</property>
+                            <property name="label">Type</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="right_attach">3</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkCheckButton" id="MTBKcheckInternational">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="label">Aéroport international</property>
+                            <property name="active">False</property>
+                            <property name="draw_indicator">True</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="right_attach">4</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelVille">
+                            <property name="visible">True</property>
+                            <property name="label">Ville*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEntry" id="MTBKtextVille">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">True</property>
+                            <property name="max_length">30</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelVolsJourTitre">
+                            <property name="visible">True</property>
+                            <property name="label">Vols programmés aujourd'hui</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="right_attach">3</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelVolsJour">
+                            <property name="visible">True</property>
+                            <property name="label">0</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="right_attach">4</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelPays">
+                            <property name="visible">True</property>
+                            <property name="label">Pays*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkComboBox" id="MTBKcomboPays">
+                            <property name="visible">True</property>
+                            <property name="add_tearoffs">False</property>
+                            <property name="focus_on_click">True</property>
+                            <property name="items">Tunisie
+Algérie
+Maroc
+Libye
+Égypte
+France
+Italie
+Espagne
+Allemagne
+Turquie
+Royaume-Uni
+Arabie saoudite
+Émirats arabes unis
+Qatar
+Autre</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelCapaciteRestanteTitre">
+                            <property name="visible">True</property>
+                            <property name="label">Capacité restante</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="right_attach">3</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelCapaciteRestante">
+                            <property name="visible">True</property>
+                            <property name="label">0</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="right_attach">4</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelCapaciteJournaliere">
+                            <property name="visible">True</property>
+                            <property name="label">Capacité journalière*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkSpinButton" id="MTBKspinCapaciteJournaliere">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="adjustment">100 1 500 1 10 10</property>
+                            <property name="climb_rate">1</property>
+                            <property name="digits">0</property>
+                            <property name="numeric">True</property>
+                            <property name="wrap">False</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="MTBKhboxBoutons">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+                      <widget class="GtkButton" id="MTBKboutonAjouter">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Ajouter</property>
+                        <property name="response_id">0</property>
+                        <signal name="clicked" handler="on_MTBKboutonAjouter_clicked" />
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkButton" id="MTBKboutonModifier">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Modifier</property>
+                        <property name="response_id">0</property>
+                        <signal name="clicked" handler="on_MTBKboutonModifier_clicked" />
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkButton" id="MTBKboutonSupprimer">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Supprimer</property>
+                        <property name="response_id">0</property>
+                        <signal name="clicked" handler="on_MTBKboutonSupprimer_clicked" />
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkButton" id="MTBKboutonViderFormulaire">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Vider le formulaire</property>
+                        <property name="response_id">0</property>
+                        <signal name="clicked" handler="on_MTBKboutonViderFormulaire_clicked" />
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKlabelObligatoire">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;les champs marqués* sont obligatoires&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">8</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="MTBKframeListe">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">2</property>
+                    <property name="border_width">0</property>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKframeListeTitre">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;Liste d'aéroports&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkVBox" id="MTBKvboxListe">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">False</property>
+                        <property name="spacing">6</property>
+                        <property name="border_width">8</property>
+                        <child>
+                          <widget class="GtkHBox" id="MTBKhboxRecherche">
+                            <property name="visible">True</property>
+                            <property name="homogeneous">False</property>
+                            <property name="spacing">6</property>
+                            <child>
+                              <widget class="GtkLabel" id="MTBKlabelRechercher">
+                                <property name="visible">True</property>
+                                <property name="label">Rechercher :</property>
+                                <property name="xalign">0.0</property>
+                                <property name="yalign">0.5</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkComboBox" id="MTBKcomboCritere">
+                                <property name="visible">True</property>
+                                <property name="add_tearoffs">False</property>
+                                <property name="focus_on_click">True</property>
+                                <property name="items">Code IATA
+Nom
+Ville
+Pays</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkEntry" id="MTBKtextRecherche">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="editable">True</property>
+                                <signal name="changed" handler="on_MTBKtextRecherche_changed" />
+                              </widget>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkButton" id="MTBKboutonRechercher">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Rechercher</property>
+                                <property name="response_id">0</property>
+                                <signal name="clicked" handler="on_MTBKboutonRechercher_clicked" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkButton" id="MTBKboutonReinitialiser">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Réinitialiser</property>
+                                <property name="response_id">0</property>
+                                <signal name="clicked" handler="on_MTBKboutonReinitialiser_clicked" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkHBox" id="MTBKhboxFiltres">
+                            <property name="visible">True</property>
+                            <property name="homogeneous">False</property>
+                            <property name="spacing">6</property>
+                            <child>
+                              <widget class="GtkLabel" id="MTBKlabelTriNom">
+                                <property name="visible">True</property>
+                                <property name="label">Tri par Nom* :</property>
+                                <property name="xalign">0.0</property>
+                                <property name="yalign">0.5</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkRadioButton" id="MTBKradioTriAZ">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">A-&gt;Z</property>
+                                <property name="active">True</property>
+                                <property name="draw_indicator">True</property>
+                                <signal name="toggled" handler="on_MTBKradioTriAZ_toggled" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkRadioButton" id="MTBKradioTriZA">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Z-&gt;A</property>
+                                <property name="active">False</property>
+                                <property name="draw_indicator">True</property>
+                                <property name="group">MTBKradioTriAZ</property>
+                                <signal name="toggled" handler="on_MTBKradioTriZA_toggled" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="MTBKlabelFiltrePays">
+                                <property name="visible">True</property>
+                                <property name="label">Pays :</property>
+                                <property name="xalign">0.0</property>
+                                <property name="yalign">0.5</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">8</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkComboBox" id="MTBKcomboFiltrePays">
+                                <property name="visible">True</property>
+                                <property name="add_tearoffs">False</property>
+                                <property name="focus_on_click">True</property>
+                                <property name="items">Tous
+Tunisie
+Algérie
+Maroc
+Libye
+Égypte
+France
+Italie
+Espagne
+Allemagne
+Turquie
+Royaume-Uni
+Arabie saoudite
+Émirats arabes unis
+Qatar
+Autre</property>
+                                <signal name="changed" handler="on_MTBKcomboFiltrePays_changed" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="MTBKlabelFiltreEtat">
+                                <property name="visible">True</property>
+                                <property name="label">État :</property>
+                                <property name="xalign">0.0</property>
+                                <property name="yalign">0.5</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">8</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkComboBox" id="MTBKcomboFiltreEtat">
+                                <property name="visible">True</property>
+                                <property name="add_tearoffs">False</property>
+                                <property name="focus_on_click">True</property>
+                                <property name="items">Tous
+Ouvert
+Fermé</property>
+                                <signal name="changed" handler="on_MTBKcomboFiltreEtat_changed" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkCheckButton" id="MTBKcheckFermesUniquement">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Aéroports fermés uniquement</property>
+                                <property name="active">False</property>
+                                <property name="draw_indicator">True</property>
+                                <signal name="toggled" handler="on_MTBKcheckFermesUniquement_toggled" />
+                              </widget>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="padding">8</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkScrolledWindow" id="MTBKscrolledAeroports">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                            <property name="shadow_type">GTK_SHADOW_IN</property>
+                            <child>
+                              <widget class="GtkTreeView" id="MTBKtreeviewAeroports">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="headers_visible">True</property>
+                                <property name="rules_hint">True</property>
+                                <property name="enable_search">True</property>
+                                <signal name="row_activated" handler="on_MTBKtreeviewAeroports_row_activated" />
+                              </widget>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelNbAeroports">
+                            <property name="visible">True</property>
+                            <property name="label">0 aéroports affichés</property>
+                            <property name="xalign">0.5</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelOngletAeroport">
+                <property name="visible">True</property>
+                <property name="label">Aéroport</property>
+                <property name="xalign">0.5</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVBox" id="MTBKvboxAffectation">
+                <property name="visible">True</property>
+                <property name="homogeneous">False</property>
+                <property name="spacing">6</property>
+                <property name="border_width">8</property>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelTitreAffectation">
+                    <property name="visible">True</property>
+                    <property name="label">&lt;span size="x-large" weight="bold"&gt;Affectation des aéroports à un vol&lt;/span&gt;</property>
+                    <property name="xalign">0.5</property>
+                    <property name="yalign">0.5</property>
+                    <property name="use_markup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="MTBKframeAffectation">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">2</property>
+                    <property name="border_width">0</property>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKframeAffectationTitre">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;Vol et aéroports&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkTable" id="MTBKtableAffectation">
+                        <property name="visible">True</property>
+                        <property name="n_rows">3</property>
+                        <property name="n_columns">2</property>
+                        <property name="homogeneous">False</property>
+                        <property name="row_spacing">8</property>
+                        <property name="column_spacing">12</property>
+                        <property name="border_width">8</property>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelVol">
+                            <property name="visible">True</property>
+                            <property name="label">Vol*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkComboBox" id="MTBKcomboVol">
+                            <property name="visible">True</property>
+                            <property name="add_tearoffs">False</property>
+                            <property name="focus_on_click">True</property>
+                            <signal name="changed" handler="on_MTBKcomboVol_changed" />
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelAeroportDepart">
+                            <property name="visible">True</property>
+                            <property name="label">Aéroport de départ*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkComboBox" id="MTBKcomboAeroportDepart">
+                            <property name="visible">True</property>
+                            <property name="add_tearoffs">False</property>
+                            <property name="focus_on_click">True</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelAeroportArrivee">
+                            <property name="visible">True</property>
+                            <property name="label">Aéroport d'arrivée*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkComboBox" id="MTBKcomboAeroportArrivee">
+                            <property name="visible">True</property>
+                            <property name="add_tearoffs">False</property>
+                            <property name="focus_on_click">True</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="MTBKhboxBoutonsAffectation">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+                      <widget class="GtkButton" id="MTBKboutonAffecter">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Affecter</property>
+                        <property name="response_id">0</property>
+                        <signal name="clicked" handler="on_MTBKboutonAffecter_clicked" />
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKlabelResultatAffectation">
+                        <property name="visible">True</property>
+                        <property name="label" />
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">8</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">4</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelOngletAffectation">
+                <property name="visible">True</property>
+                <property name="label">Affectation</property>
+                <property name="xalign">0.5</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVBox" id="MTBKvboxStatistiques">
+                <property name="visible">True</property>
+                <property name="homogeneous">False</property>
+                <property name="spacing">6</property>
+                <property name="border_width">8</property>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelTitreStats">
+                    <property name="visible">True</property>
+                    <property name="label">&lt;span size="x-large" weight="bold"&gt;Statistiques des aéroports&lt;/span&gt;</property>
+                    <property name="xalign">0.5</property>
+                    <property name="yalign">0.5</property>
+                    <property name="use_markup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="MTBKframeStatsAeroports">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">2</property>
+                    <property name="border_width">0</property>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKframeStatsAeroportsTitre">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;Vols par aéroport&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkVBox" id="MTBKvboxStatsAeroports">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">False</property>
+                        <property name="spacing">6</property>
+                        <property name="border_width">8</property>
+                        <child>
+                          <widget class="GtkHBox" id="MTBKhboxActualiser">
+                            <property name="visible">True</property>
+                            <property name="homogeneous">False</property>
+                            <property name="spacing">6</property>
+                            <child>
+                              <widget class="GtkButton" id="MTBKboutonActualiserStats">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="label">Actualiser</property>
+                                <property name="response_id">0</property>
+                                <signal name="clicked" handler="on_MTBKboutonActualiserStats_clicked" />
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="padding">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="MTBKlabelStatsTotal">
+                                <property name="visible">True</property>
+                                <property name="label" />
+                                <property name="xalign">0.0</property>
+                                <property name="yalign">0.5</property>
+                              </widget>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="padding">8</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkScrolledWindow" id="MTBKscrolledStats">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                            <property name="shadow_type">GTK_SHADOW_IN</property>
+                            <child>
+                              <widget class="GtkTreeView" id="MTBKtreeviewStats">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="headers_visible">True</property>
+                                <property name="rules_hint">True</property>
+                                <property name="enable_search">True</property>
+                                <signal name="row_activated" handler="on_MTBKtreeviewStats_row_activated" />
+                              </widget>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="MTBKframeStatsPeriode">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">2</property>
+                    <property name="border_width">0</property>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKframeStatsPeriodeTitre">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;Vols programmés par période&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkHBox" id="MTBKhboxPeriode">
+                        <property name="visible">True</property>
+                        <property name="homogeneous">False</property>
+                        <property name="spacing">6</property>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelDu">
+                            <property name="visible">True</property>
+                            <property name="label">Du (JJ/MM/AAAA) :</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEntry" id="MTBKtextDateDebut">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">True</property>
+                            <property name="max_length">10</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelAu">
+                            <property name="visible">True</property>
+                            <property name="label">Au :</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEntry" id="MTBKtextDateFin">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">True</property>
+                            <property name="max_length">10</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkButton" id="MTBKboutonCalculerPeriode">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="label">Calculer</property>
+                            <property name="response_id">0</property>
+                            <signal name="clicked" handler="on_MTBKboutonCalculerPeriode_clicked" />
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="padding">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelVolsPeriode">
+                            <property name="visible">True</property>
+                            <property name="label" />
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="padding">8</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelOngletStatistiques">
+                <property name="visible">True</property>
+                <property name="label">Statistiques</property>
+                <property name="xalign">0.5</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVBox" id="MTBKvboxCharge">
+                <property name="visible">True</property>
+                <property name="homogeneous">False</property>
+                <property name="spacing">6</property>
+                <property name="border_width">8</property>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelTitreCharge">
+                    <property name="visible">True</property>
+                    <property name="label">&lt;span size="x-large" weight="bold"&gt;Charge journalière d'un aéroport&lt;/span&gt;</property>
+                    <property name="xalign">0.5</property>
+                    <property name="yalign">0.5</property>
+                    <property name="use_markup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="MTBKframeCharge">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">2</property>
+                    <property name="border_width">0</property>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKframeChargeTitre">
+                        <property name="visible">True</property>
+                        <property name="label">&lt;b&gt;Vérification de la charge&lt;/b&gt;</property>
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                        <property name="use_markup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkTable" id="MTBKtableCharge">
+                        <property name="visible">True</property>
+                        <property name="n_rows">6</property>
+                        <property name="n_columns">2</property>
+                        <property name="homogeneous">False</property>
+                        <property name="row_spacing">8</property>
+                        <property name="column_spacing">12</property>
+                        <property name="border_width">8</property>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeAeroport">
+                            <property name="visible">True</property>
+                            <property name="label">Aéroport*</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkComboBox" id="MTBKcomboChargeAeroport">
+                            <property name="visible">True</property>
+                            <property name="add_tearoffs">False</property>
+                            <property name="focus_on_click">True</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">0</property>
+                            <property name="bottom_attach">1</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeDate">
+                            <property name="visible">True</property>
+                            <property name="label">Date* (JJ/MM/AAAA)</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkEntry" id="MTBKtextDateCharge">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="editable">True</property>
+                            <property name="max_length">10</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeDepartsTitre">
+                            <property name="visible">True</property>
+                            <property name="label">Vols au départ</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeDeparts">
+                            <property name="visible">True</property>
+                            <property name="label">0</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeArriveesTitre">
+                            <property name="visible">True</property>
+                            <property name="label">Vols à l'arrivée</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeArrivees">
+                            <property name="visible">True</property>
+                            <property name="label">0</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeTotalTitre">
+                            <property name="visible">True</property>
+                            <property name="label">Total / capacité journalière</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">1</property>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
+                            <property name="x_options">GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="MTBKlabelChargeTotal">
+                            <property name="visible">True</property>
+                            <property name="label">0 / 0</property>
+                            <property name="xalign">0.0</property>
+                            <property name="yalign">0.5</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkProgressBar" id="MTBKprogressbarCharge">
+                            <property name="visible">True</property>
+                            <property name="fraction">0</property>
+                          </widget>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">5</property>
+                            <property name="bottom_attach">6</property>
+                            <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                            <property name="y_options" />
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHBox" id="MTBKhboxBoutonsCharge">
+                    <property name="visible">True</property>
+                    <property name="homogeneous">False</property>
+                    <property name="spacing">6</property>
+                    <child>
+                      <widget class="GtkButton" id="MTBKboutonVerifierCharge">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Vérifier la charge</property>
+                        <property name="response_id">0</property>
+                        <signal name="clicked" handler="on_MTBKboutonVerifierCharge_clicked" />
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="padding">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="MTBKlabelAlerteCharge">
+                        <property name="visible">True</property>
+                        <property name="label" />
+                        <property name="xalign">0.0</property>
+                        <property name="yalign">0.5</property>
+                      </widget>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">8</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">4</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelOngletCharge">
+                <property name="visible">True</property>
+                <property name="label">Charge journalière</property>
+                <property name="xalign">0.5</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkWindow" id="MTBKwindowRechercheAeroport">
+    <property name="visible">False</property>
+    <property name="title">Carthage Airways - Rechercher un aéroport</property>
+    <property name="type">GTK_WINDOW_TOPLEVEL</property>
+    <property name="window_position">GTK_WIN_POS_CENTER</property>
+    <property name="default_width">760</property>
+    <property name="default_height">560</property>
+    <property name="border_width">6</property>
+    <signal name="destroy" handler="on_MTBKwindowRechercheAeroport_destroy" />
+    <child>
+      <widget class="GtkVBox" id="MTBKvboxPassager">
+        <property name="visible">True</property>
+        <property name="homogeneous">False</property>
+        <property name="spacing">6</property>
+        <property name="border_width">8</property>
+        <child>
+          <widget class="GtkLabel" id="MTBKlabelTitrePassager">
+            <property name="visible">True</property>
+            <property name="label">&lt;span size="x-large" weight="bold"&gt;Rechercher un aéroport&lt;/span&gt;</property>
+            <property name="xalign">0.5</property>
+            <property name="yalign">0.5</property>
+            <property name="use_markup">True</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHBox" id="MTBKhboxRecherchePassager">
+            <property name="visible">True</property>
+            <property name="homogeneous">False</property>
+            <property name="spacing">6</property>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelRecherchePassager">
+                <property name="visible">True</property>
+                <property name="label">Rechercher par :</property>
+                <property name="xalign">0.0</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="MTBKradioParVille">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="label">Ville</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <signal name="toggled" handler="on_MTBKradioParVille_toggled" />
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="MTBKradioParIata">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="label">Code IATA</property>
+                <property name="active">False</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">MTBKradioParVille</property>
+                <signal name="toggled" handler="on_MTBKradioParIata_toggled" />
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="MTBKtextRecherchePassager">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">True</property>
+                <signal name="activate" handler="on_MTBKtextRecherchePassager_activate" />
+              </widget>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="MTBKboutonRechercherPassager">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="label">Rechercher</property>
+                <property name="response_id">0</property>
+                <signal name="clicked" handler="on_MTBKboutonRechercherPassager_clicked" />
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkScrolledWindow" id="MTBKscrolledResultats">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="shadow_type">GTK_SHADOW_IN</property>
+            <child>
+              <widget class="GtkTreeView" id="MTBKtreeviewResultats">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="headers_visible">True</property>
+                <property name="rules_hint">True</property>
+                <property name="enable_search">True</property>
+                <signal name="row_activated" handler="on_MTBKtreeviewResultats_row_activated" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkVBox" id="MTBKframeDetails">
+            <property name="visible">True</property>
+            <property name="homogeneous">False</property>
+            <property name="spacing">2</property>
+            <property name="border_width">0</property>
+            <child>
+              <widget class="GtkLabel" id="MTBKframeDetailsTitre">
+                <property name="visible">True</property>
+                <property name="label">&lt;b&gt;Informations de l'aéroport sélectionné&lt;/b&gt;</property>
+                <property name="xalign">0.0</property>
+                <property name="yalign">0.5</property>
+                <property name="use_markup">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkTable" id="MTBKtableDetails">
+                <property name="visible">True</property>
+                <property name="n_rows">6</property>
+                <property name="n_columns">2</property>
+                <property name="homogeneous">False</property>
+                <property name="row_spacing">8</property>
+                <property name="column_spacing">12</property>
+                <property name="border_width">8</property>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailCodeTitre">
+                    <property name="visible">True</property>
+                    <property name="label">Code IATA</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="right_attach">1</property>
+                    <property name="top_attach">0</property>
+                    <property name="bottom_attach">1</property>
+                    <property name="x_options">GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailCode">
+                    <property name="visible">True</property>
+                    <property name="label">-</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">0</property>
+                    <property name="bottom_attach">1</property>
+                    <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailNomTitre">
+                    <property name="visible">True</property>
+                    <property name="label">Nom</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="right_attach">1</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                    <property name="x_options">GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailNom">
+                    <property name="visible">True</property>
+                    <property name="label">-</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                    <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailVilleTitre">
+                    <property name="visible">True</property>
+                    <property name="label">Ville</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="right_attach">1</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="x_options">GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailVille">
+                    <property name="visible">True</property>
+                    <property name="label">-</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailPaysTitre">
+                    <property name="visible">True</property>
+                    <property name="label">Pays</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="right_attach">1</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="x_options">GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailPays">
+                    <property name="visible">True</property>
+                    <property name="label">-</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailEtatTitre">
+                    <property name="visible">True</property>
+                    <property name="label">État</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="right_attach">1</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options">GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailEtat">
+                    <property name="visible">True</property>
+                    <property name="label">-</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailTypeTitre">
+                    <property name="visible">True</property>
+                    <property name="label">Type</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="right_attach">1</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
+                    <property name="x_options">GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkLabel" id="MTBKlabelDetailType">
+                    <property name="visible">True</property>
+                    <property name="label">-</property>
+                    <property name="xalign">0.0</property>
+                    <property name="yalign">0.5</property>
+                  </widget>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
+                    <property name="x_options">GTK_EXPAND|GTK_FILL</property>
+                    <property name="y_options" />
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHBox" id="MTBKhboxBoutonsPassager">
+            <property name="visible">True</property>
+            <property name="homogeneous">False</property>
+            <property name="spacing">6</property>
+            <child>
+              <widget class="GtkLabel" id="MTBKlabelNbResultats">
+                <property name="visible">True</property>
+                <property name="label">0 aéroports trouvés</property>
+                <property name="xalign">0.0</property>
+                <property name="yalign">0.5</property>
+              </widget>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="MTBKboutonFermerPassager">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="label">Fermer</property>
+                <property name="response_id">0</property>
+                <signal name="clicked" handler="on_MTBKboutonFermerPassager_clicked" />
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">0</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>
